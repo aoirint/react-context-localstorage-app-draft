@@ -9,8 +9,7 @@ import MyComponent from './MyComponent'
 
 function App (): JSX.Element {
   // const [themeType, setThemeType] = React.useState<ThemeType>('light')
-  const [_themeType, setThemeType] = useLocalStorage<ThemeType>('light')
-  const themeType = _themeType ?? 'light'
+  const [themeType, setThemeType] = useLocalStorage<ThemeType>('b941a77e-26af-4ea0-8f58-b5af7c5ed2a7', 'light')
   const theme = Themes[themeType]
 
   return (
