@@ -18,7 +18,7 @@ function App (): JSX.Element {
 
         <ThemeSelect
           setThemeType={setThemeType}
-          selected={themeType}
+          defaultSelected={themeType}
         />
 
         <MyComponent />

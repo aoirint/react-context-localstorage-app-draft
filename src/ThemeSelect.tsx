@@ -4,7 +4,7 @@ import ThemeContext, { Themes, ThemeType } from './ThemeContext'
 
 interface ThemeSelectProps {
   setThemeType: (newThemeType: ThemeType) => void
-  selected: ThemeType
+  defaultSelected: ThemeType
 }
 
 function ThemeSelect (props: ThemeSelectProps): JSX.Element {
@@ -23,13 +23,13 @@ function ThemeSelect (props: ThemeSelectProps): JSX.Element {
     >
       <option
         value='light'
-        selected={props.selected === 'light'}
+        selected={props.defaultSelected === 'light'}
       >
         {Themes.light.name}
       </option>
       <option
         value='dark'
-        selected={props.selected === 'dark'}
+        selected={props.defaultSelected === 'dark'}
       >
         {Themes.dark.name}
       </option>
