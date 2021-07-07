@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import './App.css'
 
-function App() {
+import ThemeContext, { Themes, ThemeType } from './ThemeContext'
+import ThemeSelect from './ThemeSelect'
+import MyComponent from './MyComponent'
+
+function App (): JSX.Element {
+  const [themeType, setThemeType] = useState<ThemeType>('light')
+  const theme = Themes[themeType]
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <ThemeContext.Provider value={theme}>
+
+        <ThemeSelect setThemeType={(newThemeType: ThemeType) => {
+          setThemeType(newThemeType)
+        }} />
+
+        <MyComponent />
+
+      </ThemeContext.Provider>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
