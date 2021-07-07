@@ -17,9 +17,7 @@ function App (): JSX.Element {
       <ThemeContext.Provider value={theme}>
 
         <ThemeSelect
-          setThemeType={(newThemeType: ThemeType) => {
-            setThemeType(newThemeType)
-          }}
+          setThemeType={setThemeType}
           selected={themeType}
         />
 
